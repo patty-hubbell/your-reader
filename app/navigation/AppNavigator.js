@@ -1,14 +1,19 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import "react-native-gesture-handler";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import WelcomeScreen from "../screens/WelcomeScreen";
 
 function AppNavigator(props) {
+  const Stack = createStackNavigator();
+
   return (
-    <View style={styles.container}></View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {}
-});
 
 export default AppNavigator;
