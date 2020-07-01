@@ -36,7 +36,7 @@ function ConfirmScreen({ navigation, route }) {
         <IconButton
           color={colors.white}
           name="ios-checkmark-circle"
-          onPress={() => navigation.navigate("Reader")}
+          onPress={() => navigation.navigate("Reader", { photo: photo })}
           size={65}
           style={styles.icon}
           title="Confirm"

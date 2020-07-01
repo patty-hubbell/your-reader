@@ -1,9 +1,15 @@
-import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, Text, ImageBackground } from "react-native";
+
 import colors from "../config/colors";
 import IconButton from "../components/IconButton";
 
-function ReaderScreen({ navigation }) {
+function ReaderScreen({ navigation, route }) {
+  const [ocrData, setOcrData] = useState(null);
+  const { photo } = route.params;
+
+  const handleOcr = async () => {};
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Reader Screen</Text>
@@ -11,6 +17,12 @@ function ReaderScreen({ navigation }) {
         color={colors.white}
         name="ios-arrow-back"
         onPress={() => navigation.popToTop()}
+        size={50}
+      />
+      <IconButton
+        color={colors.white}
+        name="ios-arrow-forward"
+        onPress={handleOcr}
         size={50}
       />
     </View>
@@ -23,6 +35,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
     flex: 1,
     justifyContent: "center",
+  },
+  image: {
+    width: "100%",
+    height: "100%",
   },
   text: {
     color: colors.white,

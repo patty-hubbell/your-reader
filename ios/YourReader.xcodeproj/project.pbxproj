@@ -13,20 +13,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3DE4DAD41476765101945408 /* libPods-YourReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43FF9D506E70904424FA7E9 /* libPods-YourReader.a */; };
-		9539EDBE24AC1B0100945893 /* libRNTesseractOcr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9539EDBD24AC1A8F00945893 /* libRNTesseractOcr.a */; };
 		956D749F24ABF81100D3589F /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 956D749D24ABF81100D3589F /* tessdata */; };
 		99EC63CFB4B549BBAF093D10 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9539EDBC24AC1A8F00945893 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9539EDB824AC1A8F00945893 /* RNTesseractOcr.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RNTesseractOcr;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -41,7 +30,7 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B47C5AFCB8BDE514B7D1AC6 /* Pods-YourReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourReader.debug.xcconfig"; path = "Target Support Files/Pods-YourReader/Pods-YourReader.debug.xcconfig"; sourceTree = "<group>"; };
 		8AC623DBF3A3E2CB072F81F2 /* Pods-YourReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourReader.release.xcconfig"; path = "Target Support Files/Pods-YourReader/Pods-YourReader.release.xcconfig"; sourceTree = "<group>"; };
-		9539EDB824AC1A8F00945893 /* RNTesseractOcr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNTesseractOcr.xcodeproj; path = "../node_modules/react-native-tesseract-ocr/ios/RNTesseractOcr.xcodeproj"; sourceTree = "<group>"; };
+		9539EDC724ACD8CF00945893 /* libRNTextDetector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNTextDetector.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		956D749D24ABF81100D3589F /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		D43FF9D506E70904424FA7E9 /* libPods-YourReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YourReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = YourReader/SplashScreen.storyboard; sourceTree = "<group>"; };
@@ -54,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9539EDBE24AC1B0100945893 /* libRNTesseractOcr.a in Frameworks */,
 				3DE4DAD41476765101945408 /* libPods-YourReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +70,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9539EDC724ACD8CF00945893 /* libRNTextDetector.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
@@ -102,7 +91,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				9539EDB824AC1A8F00945893 /* RNTesseractOcr.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -125,14 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* YourReader.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9539EDB924AC1A8F00945893 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9539EDBD24AC1A8F00945893 /* libRNTesseractOcr.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,28 +166,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9539EDB924AC1A8F00945893 /* Products */;
-					ProjectRef = 9539EDB824AC1A8F00945893 /* RNTesseractOcr.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* YourReader */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		9539EDBD24AC1A8F00945893 /* libRNTesseractOcr.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNTesseractOcr.a;
-			remoteRef = 9539EDBC24AC1A8F00945893 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
