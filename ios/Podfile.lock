@@ -274,6 +274,7 @@ PODS:
     - React
   - RNScreens (2.8.0):
     - React
+  - TesseractOCRiOS (4.0.0)
   - UMAppLoader (1.0.2)
   - UMBarCodeScannerInterface (5.1.0)
   - UMCameraInterface (5.1.0)
@@ -341,6 +342,7 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - TesseractOCRiOS (= 4.0.0)
   - UMAppLoader (from `../node_modules/unimodules-app-loader/ios`)
   - UMBarCodeScannerInterface (from `../node_modules/unimodules-barcode-scanner-interface/ios`)
   - UMCameraInterface (from `../node_modules/unimodules-camera-interface/ios`)
@@ -359,6 +361,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - TesseractOCRiOS
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -524,6 +527,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNReanimated: b5ccb50650ba06f6e749c7c329a1bc3ae0c88b43
   RNScreens: 62211832af51e0aebcf6e8c36bcf7dd65592f244
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
   UMAppLoader: ae5eaee9f3c8cc847c631a579fed20d217de5913
   UMBarCodeScannerInterface: aa3409ab9d108866e55c09ad0292e4a6c08a7775
   UMCameraInterface: 9d5da92c521e0af7815afbf77ea19bd0312b4928
@@ -539,6 +543,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 4e6c4c34a89512e2225d336154df1cb689226a29
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: e57e524a0b07e7afe8ea5862fba2394c75eece5f
+PODFILE CHECKSUM: 63ea0d0d6328cc8a0fa5f5cb8bfee6d5bc131e08
 
 COCOAPODS: 1.9.3

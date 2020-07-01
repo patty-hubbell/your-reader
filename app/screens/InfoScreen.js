@@ -29,31 +29,35 @@ function InfoScreen({ closeModal }) {
           On the Home Screen you will see two options for supplying an image of
           a document.
         </Text>
-        <Text style={styles.optionHeader}>Option 1:</Text>
-        <Text style={styles.body}>
-          Pressing the "Take Picture" button will allow you to take a picture of
-          a document with the camera on your device.
-        </Text>
-        <AppButton
-          iconName="ios-camera"
-          iconColor={colors.white}
-          iconSize={35}
-          style={styles.button}
-          title="Take Picture"
-        />
-        <Text style={styles.optionHeader}>Option 2:</Text>
-        <Text style={styles.body}>
-          Pressing the "Camera Roll" button will allow you to access the Camera
-          Roll or Images Library of your device to select an image of a
-          document.
-        </Text>
-        <AppButton
-          iconName="ios-albums"
-          iconColor={colors.white}
-          iconSize={35}
-          style={styles.button}
-          title="Camera Roll"
-        />
+        <View style={styles.optionContainer}>
+          <Text style={styles.optionHeader}>Option 1:</Text>
+          <Text style={styles.optionText}>
+            Pressing the "Take Picture" button will allow you to take a picture
+            of a document with the camera on your device.
+          </Text>
+          <AppButton
+            iconName="ios-camera"
+            iconColor={colors.white}
+            iconSize={35}
+            style={styles.button}
+            title="Take Picture"
+          />
+        </View>
+        <View style={styles.optionContainer}>
+          <Text style={styles.optionHeader}>Option 2:</Text>
+          <Text style={styles.optionText}>
+            Pressing the "Camera Roll" button will allow you to access the
+            Camera Roll or Images Library of your device to select an image of a
+            document.
+          </Text>
+          <AppButton
+            iconName="ios-albums"
+            iconColor={colors.white}
+            iconSize={35}
+            style={styles.button}
+            title="Camera Roll"
+          />
+        </View>
       </ScrollView>
     </View>
   );
@@ -64,6 +68,7 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontSize: 24,
     marginBottom: 20,
+    paddingHorizontal: 20,
   },
   button: {
     marginBottom: 20,
@@ -82,21 +87,32 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
     flex: 1,
-    paddingHorizontal: 20,
     paddingTop: Constants.statusBarHeight,
   },
   header: {
     color: colors.black,
     fontSize: 27,
     fontWeight: "bold",
-    marginVertical: 30,
+    marginVertical: 20,
     textAlign: "center",
   },
+  optionContainer: {
+    backgroundColor: colors.background,
+    borderRadius: 26,
+    marginBottom: 20,
+    marginHorizontal: 10,
+    paddingHorizontal: 10,
+  },
   optionHeader: {
-    color: colors.black,
+    color: colors.secondary,
     fontSize: 24,
     fontWeight: "bold",
-    marginVertical: 20,
+    marginVertical: 15,
+  },
+  optionText: {
+    color: colors.white,
+    fontSize: 24,
+    marginBottom: 30,
   },
 });
 
