@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import { View, StyleSheet, Text, ImageBackground } from "react-native";
+import React from "react";
+import { View, StyleSheet, Text } from "react-native";
 
 import colors from "../config/colors";
 import IconButton from "../components/IconButton";
 
-function ReaderScreen({ navigation, route }) {
-  const [ocrData, setOcrData] = useState(null);
-  const { photo } = route.params;
-
-  const handleOcr = async () => {};
-
+function ReaderScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Reader Screen</Text>
@@ -22,7 +17,7 @@ function ReaderScreen({ navigation, route }) {
       <IconButton
         color={colors.white}
         name="ios-arrow-forward"
-        onPress={handleOcr}
+        onPress={() => navigation.popToTop()}
         size={50}
       />
     </View>
