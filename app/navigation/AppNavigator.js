@@ -5,14 +5,14 @@ import {
   createStackNavigator,
   HeaderBackButton,
 } from "@react-navigation/stack";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button } from "react-native";
 
 import WelcomeScreen from "../screens/WelcomeScreen";
 import CameraScreen from "../screens/CameraScreen";
 import ConfirmScreen from "../screens/ConfirmScreen";
 import ReaderScreen from "../screens/ReaderScreen";
 import colors from "../config/colors";
-import IconButton from "../components/IconButton";
+import HeaderButton from "../components/HeaderButton";
 
 function AppNavigator(props) {
   const Stack = createStackNavigator();
@@ -23,6 +23,9 @@ function AppNavigator(props) {
         screenOptions={{
           headerStyle: {
             backgroundColor: colors.primary,
+            borderBottomWidth: 0,
+            elevation: 0,
+            shadowOpacity: 0,
           },
           headerTintColor: colors.white,
           headerTitleStyle: {
@@ -64,5 +67,11 @@ function AppNavigator(props) {
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  optionsButton: {
+    backgroundColor: "red",
+  },
+});
 
 export default AppNavigator;

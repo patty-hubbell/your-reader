@@ -1,38 +1,57 @@
-import React, { useState } from "react";
-import Constants from "expo-constants";
+import React, { useState, useLayoutEffect } from "react";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 
 import IconButton from "../components/IconButton";
+import HeaderButton from "../components/HeaderButton";
 import { backgroundColor, color } from "../config/themes";
+import colors from "../config/colors";
 
 function ReaderScreen({ navigation, route }) {
   const { ocrData } = route.params;
   const [theme, setTheme] = useState("light");
+  const [hideOptions, setHideOptions] = useState(true);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <HeaderButton
+          color={colors.white}
+          iconColor={colors.white}
+          iconName="ios-settings"
+          iconSize={26}
+          onPress={toggleOptions}
+          title="Options"
+        />
+      ),
+    });
+  }, [hideOptions]);
+
+  const toggleOptions = () => {
+    setHideOptions(!hideOptions);
+  };
 
   const renderThemePicker = () => {
     switch (theme) {
       case "light":
         return (
-          <IconButton
-            color={color(theme)}
-            name="ios-cloudy-night"
+          <HeaderButton
+            color={color.white}
+            iconColor={colors.white}
+            iconSize={26}
+            iconName="ios-cloudy-night"
             onPress={() => setTheme("dark")}
-            size={50}
-            style={styles.theme}
             title="Dark"
-            titleStyle={[styles.title, { color: color(theme) }]}
           />
         );
       case "dark":
         return (
-          <IconButton
-            color={color(theme)}
-            name="ios-sunny"
+          <HeaderButton
+            color={color.white}
+            iconColor={colors.white}
+            iconSize={26}
+            iconName="ios-sunny"
             onPress={() => setTheme("light")}
-            size={50}
-            style={styles.theme}
             title="Light"
-            titleStyle={[styles.title, { color: color(theme) }]}
           />
         );
     }
@@ -42,23 +61,14 @@ function ReaderScreen({ navigation, route }) {
     <View
       style={[styles.container, { backgroundColor: backgroundColor(theme) }]}
     >
-      <View style={styles.optionsContainer}>
-        <IconButton
-          color={color(theme)}
-          name="ios-arrow-back"
-          onPress={() => navigation.popToTop()}
-          size={50}
-          style={styles.back}
-          title="Restart"
-          titleStyle={[styles.title, { color: color(theme) }]}
-        />
-        {renderThemePicker()}
-      </View>
+      {!hideOptions && (
+        <View style={styles.optionsContainer}>{renderThemePicker()}</View>
+      )}
       <View style={styles.result}>
-        <Text style={[styles.resultsText, { color: color(theme) }]}>
-          Results:
-        </Text>
-        <ScrollView>
+        <ScrollView
+          contentInset={{ top: 10, left: 0, bottom: 70, right: 0 }}
+          contentOffset={{ x: 0, y: -10 }}
+        >
           <Text style={[styles.text, { color: color(theme) }]}>
             {ocrData.text}
           </Text>
@@ -78,7 +88,6 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
   },
   image: {
     width: "100%",
@@ -92,8 +101,10 @@ const styles = StyleSheet.create({
     width: 55,
   },
   optionsContainer: {
-    height: 70,
-    marginBottom: 50,
+    alignItems: "center",
+    backgroundColor: colors.primary,
+    height: 50,
+    justifyContent: "center",
     width: "100%",
   },
   result: {
@@ -103,7 +114,7 @@ const styles = StyleSheet.create({
   resultsText: {
     fontSize: 30,
     fontWeight: "bold",
-    marginBottom: 10,
+    paddingBottom: 50,
   },
   text: {
     fontSize: 30,
