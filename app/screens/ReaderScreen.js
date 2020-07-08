@@ -1,10 +1,11 @@
 import React, { useState, useLayoutEffect } from "react";
+import * as Speech from "expo-speech";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 
-import IconButton from "../components/IconButton";
 import HeaderButton from "../components/HeaderButton";
 import { backgroundColor, color } from "../config/themes";
 import colors from "../config/colors";
+import AppButton from "../components/AppButton";
 
 function ReaderScreen({ navigation, route }) {
   const { ocrData } = route.params;
@@ -64,6 +65,14 @@ function ReaderScreen({ navigation, route }) {
       {!hideOptions && (
         <View style={styles.optionsContainer}>{renderThemePicker()}</View>
       )}
+      <AppButton
+        iconColor={colors.white}
+        iconName="ios-megaphone"
+        iconSize={30}
+        onPress={() => Speech.speak("Hello")}
+        style={styles.listenButton}
+        title="Listen"
+      />
       <View style={styles.result}>
         <ScrollView
           contentInset={{ top: 10, left: 0, bottom: 70, right: 0 }}
@@ -87,11 +96,17 @@ const styles = StyleSheet.create({
     width: 70,
   },
   container: {
+    alignItems: "center",
     flex: 1,
   },
   image: {
     width: "100%",
     height: "100%",
+  },
+  listenButton: {
+    marginTop: 20,
+    height: 30,
+    width: "95%",
   },
   theme: {
     alignItems: "center",
@@ -102,7 +117,7 @@ const styles = StyleSheet.create({
   },
   optionsContainer: {
     alignItems: "center",
-    backgroundColor: colors.primary,
+    backgroundColor: colors.background,
     height: 50,
     justifyContent: "center",
     width: "100%",

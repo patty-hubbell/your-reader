@@ -22,7 +22,7 @@ function AppNavigator(props) {
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
-            backgroundColor: colors.primary,
+            backgroundColor: colors.background,
             borderBottomWidth: 0,
             elevation: 0,
             shadowOpacity: 0,

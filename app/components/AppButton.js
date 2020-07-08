@@ -44,17 +44,17 @@ const styles = StyleSheet.create({
     left: 20,
   },
   container: {
-    alignItems: "center",
     borderRadius: 25,
-    flexDirection: "row",
     justifyContent: "center",
-    padding: 15,
+    paddingVertical: 25,
     width: "100%",
   },
   text: {
+    alignSelf: "center",
     color: colors.white,
     fontSize: 18,
     fontWeight: "bold",
+    position: "absolute",
     textTransform: "uppercase",
   },
 });

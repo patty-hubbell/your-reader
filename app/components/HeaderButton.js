@@ -14,10 +14,7 @@ function HeaderButton({
   title,
 }) {
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={[styles.container, style, { backgroundColor: colors[color] }]}
-    >
+    <TouchableOpacity onPress={onPress} style={[styles.container, style]}>
       <>
         {iconName && (
           <Ionicons
