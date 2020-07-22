@@ -10,6 +10,7 @@ import {
 import IconButton from "../components/IconButton";
 import colors from "../config/colors";
 import useOcr from "../hooks/useOcr";
+import ConfirmControls from "../components/ConfirmControls";
 
 function ConfirmScreen({ navigation, route }) {
   const [loading, setLoading] = useState(false);
@@ -44,6 +45,7 @@ function ConfirmScreen({ navigation, route }) {
         </View>
       </Modal>
       <ImageBackground source={{ uri: photo.uri }} style={styles.image}>
+        <ConfirmControls />
         <View style={styles.options}>
           {camera && (
             <IconButton
