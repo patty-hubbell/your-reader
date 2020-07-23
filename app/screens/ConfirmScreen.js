@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import {
-  View,
-  StyleSheet,
+  ActivityIndicator,
   ImageBackground,
   Modal,
-  ActivityIndicator,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
 import Sound from "react-native-sound";
 
@@ -46,6 +47,7 @@ function ConfirmScreen({ navigation, route }) {
             color={colors.secondary}
             size="large"
           />
+          <Text style={styles.loadingText}>Loading...</Text>
         </View>
       </Modal>
       <ImageBackground
@@ -96,6 +98,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     width: "100%",
+  },
+  loadingText: {
+    color: colors.secondary,
+    fontWeight: "bold",
+    marginTop: 5,
   },
   options: {
     alignSelf: "center",

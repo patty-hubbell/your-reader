@@ -6,6 +6,7 @@ import HeaderButton from "../components/HeaderButton";
 import { backgroundColor, color } from "../config/themes";
 import colors from "../config/colors";
 import AppButton from "../components/AppButton";
+import ReaderControls from "../components/ReaderControls";
 
 function ReaderScreen({ navigation, route }) {
   const { ocrData } = route.params;
@@ -65,19 +66,17 @@ function ReaderScreen({ navigation, route }) {
       {!hideOptions && (
         <View style={styles.optionsContainer}>{renderThemePicker()}</View>
       )}
-      <AppButton
+      {/*       <AppButton
         iconColor={colors.white}
         iconName="ios-megaphone"
         iconSize={30}
         onPress={() => Speech.speak(ocrData.text)}
         style={styles.listenButton}
         title="Listen"
-      />
+      /> */}
+      <ReaderControls />
       <View style={styles.result}>
-        <ScrollView
-          contentInset={{ top: 10, left: 0, bottom: 70, right: 0 }}
-          contentOffset={{ x: 0, y: -10 }}
-        >
+        <ScrollView>
           <Text style={[styles.text, { color: color(theme) }]}>
             {ocrData.text}
           </Text>
@@ -88,20 +87,9 @@ function ReaderScreen({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
-  back: {
-    alignItems: "center",
-    height: 70,
-    left: 10,
-    position: "absolute",
-    width: 70,
-  },
   container: {
     alignItems: "center",
     flex: 1,
-  },
-  image: {
-    width: "100%",
-    height: "100%",
   },
   listenButton: {
     marginTop: 20,
@@ -123,21 +111,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   result: {
-    height: "100%",
     paddingHorizontal: 15,
-  },
-  resultsText: {
-    fontSize: 30,
-    fontWeight: "bold",
-    paddingBottom: 50,
   },
   text: {
     fontSize: 30,
-  },
-  title: {
-    fontSize: 15,
-    position: "absolute",
-    top: 50,
   },
 });
 
