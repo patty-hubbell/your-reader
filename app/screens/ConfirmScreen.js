@@ -44,42 +44,23 @@ function ConfirmScreen({ navigation, route }) {
           />
         </View>
       </Modal>
-      <ImageBackground source={{ uri: photo.uri }} style={styles.image}>
-        <ConfirmControls />
-        <View style={styles.options}>
-          {camera && (
-            <IconButton
-              color={colors.white}
-              name="ios-refresh"
-              onPress={() => navigation.navigate("Camera")}
-              size={65}
-              style={styles.icon}
-              title="Retake"
-              titleStyle={styles.iconTitle}
-            />
-          )}
-          {!camera && (
-            <IconButton
-              color={colors.white}
-              name="ios-refresh"
-              onPress={() => navigation.popToTop()}
-              size={65}
-              style={styles.icon}
-              title="Pick Again"
-              titleStyle={styles.iconTitle}
-            />
-          )}
-          <View style={styles.buffer} />
-          <IconButton
-            color={colors.white}
-            name="ios-checkmark-circle"
-            onPress={handleConfirm}
-            size={65}
-            style={styles.icon}
-            title="Confirm"
-            titleStyle={styles.iconTitle}
+      <ImageBackground
+        resizeMode="contain"
+        source={{ uri: photo.uri }}
+        style={styles.image}
+      >
+        {camera && (
+          <ConfirmControls
+            onRetake={() => navigation.navigate("Camera")}
+            onConfirm={() => handleConfirm()}
           />
-        </View>
+        )}
+        {!camera && (
+          <ConfirmControls
+            onRepick={() => navigation.popToTop()}
+            onConfirm={() => handleConfirm()}
+          />
+        )}
       </ImageBackground>
     </>
   );
@@ -101,8 +82,9 @@ const styles = StyleSheet.create({
     width: 100,
   },
   image: {
-    width: "100%",
+    backgroundColor: colors.black,
     height: "100%",
+    width: "100%",
   },
   loadingContainer: {
     alignItems: "center",
