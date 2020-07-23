@@ -69,7 +69,7 @@ function ReaderScreen({ navigation, route }) {
         iconColor={colors.white}
         iconName="ios-megaphone"
         iconSize={30}
-        onPress={() => Speech.speak("Hello")}
+        onPress={() => Speech.speak(ocrData.text)}
         style={styles.listenButton}
         title="Listen"
       />

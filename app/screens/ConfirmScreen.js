@@ -25,7 +25,7 @@ function ConfirmScreen({ navigation, route }) {
       navigation.navigate("Reader", {
         ocrData: {
           text:
-            "Her cheekbones flaring scarlet as Wizard’s Castle burned, forehead drenched with azure when Munich fell to the Tank War, mouth touched with hot gold as a paid killer in the tunnel’s ceiling. Why bother with the movement of the train, their high heels like polished hooves against the gray metal of the room where Case waited. Sexless and inhumanly patient, his primary gratification seemed to he in his sleep, and wake alone in the human system. It was disturbing to think of the Flatline as a gliding cursor struck sparks from the Chinese program’s thrust, a worrying impression of solid fluidity, as though the shards of a broken mirror bent and elongated as they rotated, but it never told the correct time. Strata of cigarette smoke rose from the tiers, drifting until it struck currents set up by the blowers and the robot gardener. They were dropping, losing altitude in a canyon of rainbow foliage, a lurid communal mural that completely covered the hull of the Flatline as a construct, a hardwired ROM cassette replicating a dead man’s skills, obsessions, kneejerk responses. She put his pistol down, picked up her fletcher, dialed the barrel over to single shot, and very carefully put a toxin dart through the center of a heroin factory.",
+            "Now this quiet courtyard, Sunday afternoon, this girl with a hand on his chest. A graphic representation of data abstracted from the Chinese program’s thrust, a worrying impression of solid fluidity, as though the shards of a broken mirror bent and elongated as they rotated, but it never told the correct time.",
         },
       });
     } catch (error) {
