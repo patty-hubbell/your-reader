@@ -6,6 +6,7 @@ import {
   Modal,
   ActivityIndicator,
 } from "react-native";
+import Sound from "react-native-sound";
 
 import IconButton from "../components/IconButton";
 import colors from "../config/colors";
@@ -16,6 +17,9 @@ function ConfirmScreen({ navigation, route }) {
   const [loading, setLoading] = useState(false);
   const { camera, photo } = route.params;
   const ocr = useOcr();
+
+  // Enable audio playback in silent mode
+  Sound.setCategory("Playback");
 
   const handleConfirm = async () => {
     try {
