@@ -12,18 +12,15 @@ export default function ConfirmControls({
   return (
     <View style={styles.container}>
       {onRepick && (
-        <TouchableOpacity onPress={onRepick} style={styles.retakeContainer}>
-          <Text style={styles.text}>Re-pick</Text>
+        <TouchableOpacity onPress={onRepick} style={styles.redoContainer}>
+          <Text style={styles.text}>Pick Again</Text>
         </TouchableOpacity>
       )}
       {onRetake && (
-        <TouchableOpacity onPress={onRetake} style={styles.retakeContainer}>
+        <TouchableOpacity onPress={onRetake} style={styles.redoContainer}>
           <Text style={styles.text}>Retake</Text>
         </TouchableOpacity>
       )}
-      <TouchableOpacity onPress={onCrop} style={styles.cropContainer}>
-        <Text style={styles.text}>Crop</Text>
-      </TouchableOpacity>
       <TouchableOpacity onPress={onConfirm} style={styles.confirmContainer}>
         <Text style={styles.text}>Confirm</Text>
       </TouchableOpacity>
@@ -40,20 +37,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "90%",
   },
-  retakeContainer: {
+  redoContainer: {
     alignItems: "center",
     backgroundColor: colors.primary,
     borderBottomLeftRadius: 15,
     borderTopLeftRadius: 15,
     flex: 1,
     justifyContent: "center",
-  },
-  cropContainer: {
-    alignItems: "center",
-    backgroundColor: colors.primary,
-    flex: 1,
-    justifyContent: "center",
-    marginHorizontal: 3,
+    marginRight: 2,
   },
   confirmContainer: {
     alignItems: "center",
@@ -62,6 +53,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 15,
     flex: 1,
     justifyContent: "center",
+    marginLeft: 2,
   },
   text: {
     color: colors.white,
