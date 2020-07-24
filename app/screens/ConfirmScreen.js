@@ -25,13 +25,10 @@ function ConfirmScreen({ navigation, route }) {
   const handleConfirm = async () => {
     try {
       setLoading(true);
-      //const result = await ocr.processPhoto(photo.uri);
+      const result = await ocr.processPhoto(photo.uri);
       setLoading(false);
       navigation.navigate("Reader", {
-        ocrData: {
-          text:
-            "Case felt the edge of the spherical chamber. He’d waited in the tunnel’s ceiling. A graphic representation of data abstracted from the banks of every computer in the Japanese night like live wire voodoo and he’d cry for it, cry in his devotion to esoteric forms of tailor-worship. The semiotics of the bright void beyond the chain link. A narrow wedge of light from a half-open service hatch framed a heap of discarded fiber optics and the chassis of a painted jungle of rainbow foliage, a lurid communal mural that completely covered the hull of the blowers and the amplified breathing of the fighters. The semiotics of the car’s floor. That was Wintermute, manipulating the lock the way it had manipulated the drone micro and the amplified breathing of the deck sting his palm as he made his way down Shiga from the sushi stall he cradled it in his capsule in some coffin hotel, his hands clawed into the shadow of the console.",
-        },
+        ocrData: result,
       });
     } catch (error) {
       console.error("Error when performing text recognition.", error);

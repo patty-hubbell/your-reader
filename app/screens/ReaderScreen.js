@@ -11,9 +11,7 @@ function ReaderScreen({ navigation, route }) {
   const { ocrData } = route.params;
   const [theme, setTheme] = useState("light");
   const [hideOptions, setHideOptions] = useState(true);
-  const { handlePause, handlePlay, handleReplay, paused, playing } = useReader(
-    ocrData.text
-  );
+  const { handlePause, handlePlay, handleReplay } = useReader(ocrData.text);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -77,8 +75,6 @@ function ReaderScreen({ navigation, route }) {
         onPause={handlePause}
         onPlay={handlePlay}
         onReplay={handleReplay}
-        paused={paused}
-        playing={playing}
       />
     </View>
   );
