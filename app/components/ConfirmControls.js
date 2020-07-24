@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import colors from "../config/colors";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function ConfirmControls({
   onRepick,

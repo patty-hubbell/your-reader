@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import Sound from "react-native-sound";
 
-import IconButton from "../components/IconButton";
 import colors from "../config/colors";
 import useOcr from "../hooks/useOcr";
 import ConfirmControls from "../components/ConfirmControls";

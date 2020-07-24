@@ -1,6 +1,6 @@
 import React from "react";
 import Constants from "expo-constants";
-import { View, StyleSheet, Modal, Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
 import AppButton from "../components/AppButton";
 import colors from "../config/colors";
