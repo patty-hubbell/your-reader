@@ -13,9 +13,12 @@ import ConfirmScreen from "../screens/ConfirmScreen";
 import ReaderScreen from "../screens/ReaderScreen";
 import colors from "../config/colors";
 import HeaderButton from "../components/HeaderButton";
+import ReaderControls from "../components/ReaderControls";
+import useReader from "../hooks/useReader";
 
 function AppNavigator(props) {
   const Stack = createStackNavigator();
+  const reader = useReader();
 
   return (
     <NavigationContainer>
@@ -56,7 +59,10 @@ function AppNavigator(props) {
               <HeaderBackButton
                 label="Restart"
                 labelStyle={{ fontSize: 20 }}
-                onPress={() => navigation.popToTop()}
+                onPress={() => {
+                  reader.handleFinish();
+                  navigation.popToTop();
+                }}
                 tintColor={colors.white}
               />
             ),

@@ -3,13 +3,14 @@ import { StyleSheet, View } from "react-native";
 import IconButton from "./IconButton";
 import colors from "../config/colors";
 
-export default function ReaderControls() {
+export default function ReaderControls({ onPause, onPlay, onReplay }) {
   return (
     <View style={styles.container}>
       <View style={[styles.buttonContainer, styles.playContainer]}>
         <IconButton
           color={colors.white}
           name="ios-play"
+          onPress={onPlay}
           size={30}
           style={styles.buttons}
           title="Play"
@@ -20,6 +21,7 @@ export default function ReaderControls() {
         <IconButton
           color={colors.white}
           name="ios-pause"
+          onPress={onPause}
           size={30}
           style={styles.buttons}
           title="Pause"
@@ -30,6 +32,7 @@ export default function ReaderControls() {
         <IconButton
           color={colors.white}
           name="ios-refresh"
+          onPress={onReplay}
           size={30}
           style={styles.buttons}
           title="Replay"
@@ -50,7 +53,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     height: 70,
-    marginVertical: 20,
+    marginBottom: 40,
+    marginTop: 20,
     width: 250,
   },
   buttons: {

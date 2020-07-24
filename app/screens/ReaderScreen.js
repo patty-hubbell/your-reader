@@ -1,17 +1,19 @@
 import React, { useState, useLayoutEffect } from "react";
-import * as Speech from "expo-speech";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 
 import HeaderButton from "../components/HeaderButton";
 import { backgroundColor, color } from "../config/themes";
 import colors from "../config/colors";
-import AppButton from "../components/AppButton";
 import ReaderControls from "../components/ReaderControls";
+import useReader from "../hooks/useReader";
 
 function ReaderScreen({ navigation, route }) {
   const { ocrData } = route.params;
   const [theme, setTheme] = useState("light");
   const [hideOptions, setHideOptions] = useState(true);
+  const { handlePause, handlePlay, handleReplay, paused, playing } = useReader(
+    ocrData.text
+  );
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -66,22 +68,18 @@ function ReaderScreen({ navigation, route }) {
       {!hideOptions && (
         <View style={styles.optionsContainer}>{renderThemePicker()}</View>
       )}
-      {/*       <AppButton
-        iconColor={colors.white}
-        iconName="ios-megaphone"
-        iconSize={30}
-        onPress={() => Speech.speak(ocrData.text)}
-        style={styles.listenButton}
-        title="Listen"
-      /> */}
-      <ReaderControls />
-      <View style={styles.result}>
-        <ScrollView>
-          <Text style={[styles.text, { color: color(theme) }]}>
-            {ocrData.text}
-          </Text>
-        </ScrollView>
-      </View>
+      <ScrollView style={styles.results}>
+        <Text style={[styles.text, { color: color(theme) }]}>
+          {ocrData.text}
+        </Text>
+      </ScrollView>
+      <ReaderControls
+        onPause={handlePause}
+        onPlay={handlePlay}
+        onReplay={handleReplay}
+        paused={paused}
+        playing={playing}
+      />
     </View>
   );
 }
@@ -110,7 +108,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
   },
-  result: {
+  results: {
+    marginTop: 20,
     paddingHorizontal: 15,
   },
   text: {
