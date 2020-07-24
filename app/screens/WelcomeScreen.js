@@ -40,7 +40,7 @@ function WelcomeScreen({ navigation }) {
           iconSize={35}
           onPress={() => navigation.navigate("Camera")}
           style={styles.button}
-          title="Take Picture"
+          title="Take Photo"
         />
         <AppButton
           iconName="ios-albums"
@@ -48,7 +48,7 @@ function WelcomeScreen({ navigation }) {
           iconSize={35}
           onPress={handleCameraRollPress}
           style={styles.button}
-          title="Camera Roll"
+          title="Photo Library"
         />
         <IconButton
           color={colors.white}
@@ -59,12 +59,20 @@ function WelcomeScreen({ navigation }) {
           titleStyle={styles.infoTitle}
           title="Info"
         />
+        <Text style={styles.authorText}>Patrick Hubbell 2020</Text>
       </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  authorText: {
+    bottom: 30,
+    color: colors.white,
+    fontSize: 15,
+    fontWeight: "bold",
+    position: "absolute",
+  },
   button: {
     marginBottom: 20,
   },
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
   },
   info: {
     alignItems: "center",
-    bottom: 20,
+    bottom: 30,
     height: 80,
     position: "absolute",
     right: 15,

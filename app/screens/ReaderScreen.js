@@ -11,7 +11,9 @@ function ReaderScreen({ navigation, route }) {
   const { ocrData } = route.params;
   const [theme, setTheme] = useState("light");
   const [hideOptions, setHideOptions] = useState(true);
-  const { handlePause, handlePlay, handleReplay } = useReader(ocrData.text);
+  const { handlePause, handlePlay, handleReplay } = useReader(
+    ocrData.text.replace(/(\r\n|\n|\r)/gm, " ")
+  );
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -68,7 +70,7 @@ function ReaderScreen({ navigation, route }) {
       )}
       <ScrollView style={styles.results}>
         <Text style={[styles.text, { color: color(theme) }]}>
-          {ocrData.text}
+          {ocrData.text.replace(/(\r\n|\n|\r)/gm, " ")}
         </Text>
       </ScrollView>
       <ReaderControls
